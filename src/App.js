@@ -3,8 +3,11 @@ import Login from "./pages/login/Login";
 import { useState } from "react";
 
 function App() {
-  const [authUser, setAuthUser] = useState(null);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  function handleLogState() {
+    setIsLoggedIn((current) => !current)
+    console.log(isLoggedIn)
+  }
 
 
   return (
@@ -12,7 +15,7 @@ function App() {
       <Router>
 
         <Routes>
-          <Route exact to path="/" element={<Login/>}>
+          <Route exact to path="/" element={<Login isLoggedIn={isLoggedIn}/>}>
           </Route>
         </Routes>
 

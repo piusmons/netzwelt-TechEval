@@ -3,29 +3,54 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 
 
-export default function Login() {
-    const [email, setEmail] = useState('');
+export default function Login({isLoggedIn}) {
+    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-
-    const signIn = (e) => {
+    
+    
+    
+   // "https://cors-anywhere.herokuapp.com/{https://netzwelt-devtest.azurewebsites.net/Account/SignIn}"
+    
+    const signIn = async (e) => {
         e.preventDefault();
-        console.log("test")
+        const sent = await fetch('http://localhost:4000/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({username: userName, password: password})
+        })
+
+        try {
+            const response = await sent.json()
+                
+        } catch(error) {
+            console.log(error)
+        }
+        
+        
+
+    
+        
+        
+        
     
     }
 
+   
     return (
 
         <div className="login">
             <span className="loginTitle">Login</span>
             <form className="loginForm" onSubmit={signIn}>
 
-                <label>Email</label>
+                <label>Username</label>
                 <input 
                 className="loginInput"
                 type="text" 
-                placeholder="Enter your email here"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                placeholder="Enter your username here"
+                onChange={(e) => setUserName(e.target.value)}
+                value={userName}
                 />
 
                 <label>Password</label>
@@ -37,7 +62,8 @@ export default function Login() {
                 value={password}
                 />
 
-                <button className="loginButton">Login</button>  
+                <button className="loginButton">Login</button> 
+
 
             </form> 
             
