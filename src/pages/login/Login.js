@@ -8,9 +8,6 @@ export default function Login({isLoggedIn, change}) {
     const [password, setPassword] = useState('');
     
     
-    
-   // "https://cors-anywhere.herokuapp.com/{https://netzwelt-devtest.azurewebsites.net/Account/SignIn}"
-    
     const signIn = async (e) => {
         e.preventDefault();
         const sent = await fetch('http://localhost:4000/login', {
@@ -33,11 +30,6 @@ export default function Login({isLoggedIn, change}) {
         } catch(error) {
             console.log(error)
         }
-        
-        
-
-    
-        
         
         
     

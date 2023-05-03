@@ -45,9 +45,16 @@ app.post('/login', async(req, res) => {
                 })
     
     
-
-    
            
+})
+
+
+
+app.get('/territory', (req, res) => {
+
+    axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All")
+        .then(response => res.json(response.data))
+        .catch(err => console.log(err))
 })
 
 

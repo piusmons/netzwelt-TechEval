@@ -10,7 +10,7 @@ function App() {
     setIsLoggedIn(true)
   }
 
-
+  
   
 
   return (
@@ -18,9 +18,9 @@ function App() {
       <Router>
 
         <Routes>
-          <Route exact to path="/account/login" element={isLoggedIn ? <Home/> : <Login change = {handleLogState} isLoggedIn={isLoggedIn} /> }>
+          <Route exact to path="/account/login" element={isLoggedIn ? <Home isLoggedIn={isLoggedIn}/> : <Login change = {handleLogState} isLoggedIn={isLoggedIn} /> }>
           </Route>
-          <Route exact to path="/" element={isLoggedIn ? <Home/> : <Login/>} >
+          <Route exact to path="/" element={isLoggedIn ? <Home isLoggedIn={isLoggedIn}/> : <Login change = {handleLogState} isLoggedIn={isLoggedIn} />} >
           </Route>
           
           
