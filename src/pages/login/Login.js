@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 
 
-export default function Login({isLoggedIn}) {
+export default function Login({isLoggedIn, change}) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     
@@ -23,6 +23,12 @@ export default function Login({isLoggedIn}) {
 
         try {
             const response = await sent.json()
+            console.log(response)
+            if (response.logIn == "SUCCESS") {
+                change()
+            } else {
+                alert("Incorrect username/password")
+            }
                 
         } catch(error) {
             console.log(error)
@@ -63,10 +69,10 @@ export default function Login({isLoggedIn}) {
                 />
 
                 <button className="loginButton">Login</button> 
-
+                
 
             </form> 
-            
+           
 
                 
         </div>
