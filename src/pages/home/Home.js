@@ -27,7 +27,7 @@ export default function Home({isLoggedIn}) {
 
 
     return(
-        <div>
+        <div className="treeContainer">
             
             {data.length < 1 ? <p>loading</p> : <Tree data={data}/> }
         </div>

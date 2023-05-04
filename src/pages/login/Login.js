@@ -39,10 +39,11 @@ export default function Login({isLoggedIn, change}) {
     return (
 
         <div className="login">
-            <span className="loginTitle">Login</span>
+            
             <form className="loginForm" onSubmit={signIn}>
-
-                <label>Username</label>
+            <span className="loginTitle">Login</span>
+            <div className="inputContainer"> 
+                <label>Username:</label>
                 <input 
                 className="loginInput"
                 type="text" 
@@ -50,8 +51,10 @@ export default function Login({isLoggedIn, change}) {
                 onChange={(e) => setUserName(e.target.value)}
                 value={userName}
                 />
+            </div>
 
-                <label>Password</label>
+            <div className="inputContainer"> 
+                <label>Password:</label>
                 <input 
                 className="loginInput" 
                 type="password" 
@@ -59,6 +62,7 @@ export default function Login({isLoggedIn, change}) {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 />
+            </div>
 
                 <button className="loginButton">Login</button> 
                 

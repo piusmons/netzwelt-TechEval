@@ -1,6 +1,64 @@
 
 
 .login {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    margin-top: 50px;
+    
+}
+
+.loginForm {
     display: flex;
     flex-direction: column;
+    row-gap: 10px;
+    background: rgba( 81, 181, 190, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 13px );
+    -webkit-backdrop-filter: blur( 13px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 50px;
+    }
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 11px;
+    justify-content: center;
+
+}
+
+input[type="text"],
+[type="password"] {
+
+    padding: 11px;
+    font-size: 14px;
+}
+
+.loginButton{
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    margin: 20px 0;
+}
+
+.loginButton:hover{
+    cursor: pointer;
+    background-color:rgb(134, 103, 22) ;
+}
+
+.loginTitle {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
 }
