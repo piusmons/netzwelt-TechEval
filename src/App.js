@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   function handleLogState() {
     setIsLoggedIn(true)
   }

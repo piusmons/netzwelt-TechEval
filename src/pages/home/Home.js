@@ -5,7 +5,7 @@ import Tree from "../../components/Tree.js"
 
 
 export default function Home({isLoggedIn}) {
-    const [data, setData] = useState([]);
+   const [data, setData] = useState([]);
     
    useEffect(() => {
     fetch("http://localhost:4000/territory")
@@ -14,20 +14,22 @@ export default function Home({isLoggedIn}) {
         
    }, [])
 
-   useEffect(() => { 
+
+   
+   useEffect(() => {
     console.log(data)
-
-   },[data])
-
+    
+    },[data])
   
+
+
    
 
 
     return(
         <div>
             
-            {data && <Tree data={data}/>}
-            
+            {data.length < 1 ? <p>loading</p> : <Tree data={data}/> }
         </div>
     )
 }
