@@ -21,7 +21,9 @@ export default function Branch( {key, data, name, depth = 0, ...node}) {
     return(
 
         <div style={{ marginLeft: depth * 16}}>
-            <button onClick={handleClick}>{expanded? '-' : '+'}</button>
+            {children.length > 0 && (
+        <button onClick={handleClick}>{expanded ? "-" : "+"}</button>
+      )}
             <label>{name}</label>
             
             {expanded &&
